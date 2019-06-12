@@ -13,21 +13,21 @@ int main()
 	{
 		cout<<'-';
 	}
-	stack<int> sep;
+	stack<char> sep;
 	do
 	{
-		sep.push(abs(sum%10));
+		sep.push(abs(sum%10)+0x30);
+		digit_count++;
 		sum/=10;
+		if(digit_count%3==0&&sum!=0)
+		{
+			sep.push(',');
+		}
 	}while(sum!=0);
 	while(sep.size())
 	{
 		cout<<sep.top();
 		sep.pop();
-		digit_count++;
-		if(digit_count%3==0&&sep.size()!=0)
-		{
-			cout<<',';
-		}
 	}
 	cout<<endl;
 	
