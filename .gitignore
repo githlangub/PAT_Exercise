@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# VIM Editor cache files
+.*.swp
